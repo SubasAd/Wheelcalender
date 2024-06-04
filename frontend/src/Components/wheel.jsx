@@ -1,6 +1,6 @@
 import React, { useState, useEffect } from 'react';
 import fetchICSData from "../utils/reader"; // Assuming you have an ICS data reader function
-import { NepaliDate } from 'nepali-date';
+import NepaliDate from 'nepali-date';
 
 
 export default function Wheel() {
@@ -56,26 +56,25 @@ const formatDates = (dates, events) => {
 	// Helper function to convert Gregorian date to Nepali date and return relevant info
 	const convertToNepaliDate = (gregorianDateString) => {
 	  const year = parseInt(gregorianDateString.slice(0, 4));
-	  const month = parseInt(gregorianDateString.slice(4, 6)) - 1;
+	  const month = parseInt(gregorianDateString.slice(4, 6)) ;
 	  const day = parseInt(gregorianDateString.slice(6, 8));
 	  const nepaliDate = new NepaliDate(new Date(year, month, day));
 	  
-	  const dateString = nepaliDate.format('mmmm d, yyyy ddd');
-	  const dayRegex = /\d+/; // Regular expression to match one or more digits
-	  const day_nep = dateString.match(dayRegex)[0]; //
+	  const dateString = nepaliDate.format('m');
+	  // Extract the day part from the formatted string
+
 	  return {
 		date: nepaliDate,
-		month: nepaliDate.getMonth(),
+		month: nepaliDate.getMonth() ,
 		day: nepaliDate.getDate() - 1, // Nepali dates are 1-indexed, array is 0-indexed
-		day_nep:day_nep,
+		
 	  };
 	};
 	// Flatten the dates and events arrays
-	const flatDates = dates.flatMap(calendar => calendar.VCALENDAR.flatMap(vcal => vcal.VEVENT));
-	const flatEvents = events.flatMap(calendar => calendar.VCALENDAR.flatMap(vcal => vcal.VEVENT));
-
+	
 	// Process dates
-	flatDates.forEach(event => {
+	dates = dates["VCALENDAR"][0]["VEVENT"]
+	dates.forEach(event => {
 	// Process dates
    
 		const dateEnglish = event["DTSTART;VALUE=DATE"];
@@ -85,21 +84,20 @@ const formatDates = (dates, events) => {
 			return;
 		  }
   
-		const { date, month, day, day_nep } = convertToNepaliDate(dateEnglish);
-		if (day_nep !== event.SUMMARY) {
-			errorCountDates++;
-		}
-		if (formattedDates[month][day] === null) {
+		const { date, month, day } = convertToNepaliDate(dateEnglish);
+		
+	
 		  formattedDates[month][day] = {
 			"n_date": date.format('YYYY-MM-DD'),
+			"e_date": dateEnglish,
+			"n_day":event["SUMM"],
 		  };
-		} else {
-		  errorCountDates++;
-		}
+	
 	});
 
 	// Process events
-	flatEvents.forEach(event => {
+	events = events["VCALENDAR"][0]["VEVENT"]
+	events.forEach(event => {
 
 		const dateEnglish = event["DTSTART;VALUE=DATE"];
 		if (!dateEnglish) {
@@ -120,13 +118,12 @@ const formatDates = (dates, events) => {
 		} else {
 		  formattedDates[month][day].events = [event.SUMMARY];
 		}
-		console.log("hi");
+		
 	});
   
 	console.log("Date Errors:", errorCountDates);
 	console.log("Event Errors:", errorCountEvents);
 	setFormattedDates(formattedDates);
-	console.log(finalFormattedDates);
   };
   
 
