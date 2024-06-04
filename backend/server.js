@@ -7,8 +7,10 @@ import fs from 'fs';
 import path from 'path';
 import express from 'express';
 import ical2json from "ical2json";
+import cors from 'cors';
 
 const app = express();
+app.use(cors());
 const PORT = 5000;
 
 const convert = async () => {
