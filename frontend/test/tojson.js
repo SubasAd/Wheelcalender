@@ -12,7 +12,7 @@ END:VCALENDAR`; // Replace with a valid ICS sample
     // Mock the fetch response to return the mock ICS data
     icsToJson.mockResolvedValueOnce(JSON.parse(mockIcsData));
 
-    const fileLocation = 'https://example.com/valid-ics-file.ics'; // Replace with a valid URL or file path
+    const fileLocation = 'src/ics_folder/Nepali Events.ics'; // Replace with a valid URL or file path
 
     const convertedData = await convert(fileLocation);
 
