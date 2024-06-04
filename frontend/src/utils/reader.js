@@ -1,6 +1,13 @@
-export default async function fetchICSData() {
+export default async function fetchICSData(for_dates=false) {
 	try {
-	  const response = await fetch('http://localhost:5000/get_json');
+		var response = null;
+		if (for_dates){
+			response = await fetch('http://localhost:5000/get_dates');
+		}else{
+
+			response = await fetch('http://localhost:5000/get_events');
+		}
+
 	  // Check for successful response
 	  if (!response.ok) {
 		throw new Error(`Error fetching data: ${response.status}`);
