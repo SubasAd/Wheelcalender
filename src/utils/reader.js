@@ -1,11 +1,15 @@
-import icsToJson from 'ics-to-json'
- 
-// Get ICS text however you like, example below
-// Make sure you have the right CORS settings if needed
-const convert = async (fileLocation) => {
-    const icsRes = await fetch(fileLocation)
-    const icsData = await icsRes.text()
-    // Convert
-    const data = icsToJson(icsData)
-    return data
-}
+import icsToJson from 'ics-to-json';
+
+const convert = () => {
+  // Read ICS file from local storage
+  const icsData = localStorage.getItem('icsFile');
+
+  if (icsData) {
+    // Convert ICS data to JSON
+    const data = icsToJson(icsData);
+    return data;
+  } else {
+    console.error('ICS file not found in local storage');
+    return null;
+  }
+};
