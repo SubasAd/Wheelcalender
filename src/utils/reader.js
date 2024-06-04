@@ -1,15 +1,20 @@
 import icsToJson from 'ics-to-json';
+import fs from 'fs';
+import path from 'path';
 
 const convert = () => {
-  // Read ICS file from local storage
-  const icsData = localStorage.getItem('icsFile');
+  try {
+    // Get the absolute path of the ICS file
+    const icsFilePath = path.join(__dirname, 'src', 'sa.ics');
 
-  if (icsData) {
+    // Read the ICS file data
+    const icsData = fs.readFileSync(icsFilePath, 'utf8');
+
     // Convert ICS data to JSON
     const data = icsToJson(icsData);
     return data;
-  } else {
-    console.error('ICS file not found in local storage');
+  } catch (error) {
+    console.error('Error reading ICS file:', error);
     return null;
   }
 };
