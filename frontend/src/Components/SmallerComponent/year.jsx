@@ -8,8 +8,10 @@ const TrapezoidWithArcs = ({ canvasRef, }) => {
 		const canvas = canvasRef.current;
 		const ctx = canvas.getContext('2d');
   
-		const monthNames = ['Jan', 'Feb', 'Mar', 'Apr', 'May', 'Jun', 'Jul', 'Aug', 'Sep', 'Oct', 'Nov', 'Dec'];
-  
+		const monthNames = ['Jansadsada', 'Feb', 'Mar', 'Apr', 'May', 'Jun', 'Jul', 'Aug', 'Sep', 'Oct', 'Nov', 'Dec'];
+		const monthNamesNepali = [
+			'बैशाख', 'जेठ', 'असार', 'साउन', 'भदौ', 'असोज', 'कार्तिक', 'मंसिर', 'पुष', 'माघ', 'फागुन', 'चैत'
+		  ];
 		const centerX = canvas.width / 2;
 		const centerY = canvas.height / 2;
 		
@@ -53,7 +55,8 @@ const TrapezoidWithArcs = ({ canvasRef, }) => {
 		  const dayAngleIncrement = angleIncrement / 7; // 7 days in a week
    
 		  for (let i = 0; i < 12; i++) {
-			const angle = (i * angleIncrement) * (Math.PI / 180); // Convert to radians
+			
+			const angle =   (i * angleIncrement) * (Math.PI / 180); // Convert to radians
 	
 			const startX = centerX + radii[0] * Math.cos(angle); // r2
 			const startY = centerY + radii[0] * Math.sin(angle); // r2
@@ -82,40 +85,93 @@ const TrapezoidWithArcs = ({ canvasRef, }) => {
 			ctx.stroke();
 			
 
-			function writeMonthName(topLeftX, topLeftY, topRightX, topRightY, bottomLeftX, bottomLeftY, bottomRightX, bottomRightY, month_text) {
+			function writeMonthName(start_angle, month_text_index) {
 				
 				const fontSize = 14;
 				ctx.font = `${fontSize}px Arial`;
-				ctx.fillStyle = '#dd0000';
-			
-				// Calculate the center point of the box
-				let m_centerX =   topLeftX +fontSize ;
-				let m_centerY = topLeftY - fontSize;
-			
-				// Calculate the angle of the vector from the center to the right top corner
-				
-				// Draw text aligned with the vector
-				ctx.fillStyle = "blue";
-				
-				ctx.font = `bold 10px Arial`;
+				ctx.fillStyle = "blue";	
 				ctx.textAlign = "center";
 				ctx.textBaseline = "middle";
 				ctx.save();
 				
-				
-				
-				let angle = Math.atan2(topRightY - centerY, topRightX - centerX);
+				const rad_increment = angleIncrement*(Math.PI / 180)
+				const mid_radii = (radii[0] + radii[1])/2
+				const m_centerX = centerX + mid_radii * Math.cos(start_angle + rad_increment/6); // r2
+				const m_centerY = centerY + mid_radii * Math.sin(start_angle + rad_increment/6); // r2
+	
+				let angle = Math.atan2(m_centerY - centerY,m_centerX - centerX);
 				ctx.translate(m_centerX, m_centerY);
-				ctx.rotate(Math.PI + angle);//
-				ctx.fillText(month_text,0,0);
+				ctx.rotate(Math.PI/2+ angle);//
+				ctx.fillText(monthNames[month_text_index],0,0);
+
+				ctx.restore()
+
+
+				ctx.font = `${fontSize}px Arial`;
+				ctx.fillStyle = "blue";	
+				ctx.textAlign = "center";
+				ctx.textBaseline = "middle";
+				ctx.save();
+				const nep_mid_radii = (radii[0] + radii[1])/2
+
+				const nep_m_centerX = centerX + nep_mid_radii * Math.cos(start_angle + rad_increment*(5/6) ); // r2
+				const nep_m_centerY = centerY + nep_mid_radii * Math.sin(start_angle + rad_increment*(5/6) ); // r2
+	
+				let angle_ = Math.atan2(nep_m_centerY - centerY,nep_m_centerX - centerX);
+
+				ctx.translate(nep_m_centerX, nep_m_centerY);
+				ctx.rotate(Math.PI/2 + angle_);//
+				ctx.fillText(monthNamesNepali[month_text_index],0,0);
 				ctx.restore();
+
 			}
 			
-			writeMonthName(topLeftX, topLeftY, topRightX, topRightY, bottomLeftX, bottomLeftY, bottomRightX, bottomRightY, monthNames[i])
+			writeMonthName(angle,i)
 			//
 			// Function to draw text inside trapezoin.
 
 			//
+
+			function writeDayName(start_angle, month_text) {
+				
+				const fontSize = 14;
+				ctx.font = `${fontSize}px Arial`;
+				ctx.fillStyle = "blue";	
+				ctx.textAlign = "center";
+				ctx.textBaseline = "middle";
+				ctx.save();
+				
+				const rad_increment = angleIncrement*(Math.PI / 180)
+				const mid_radii = (radii[0] + radii[1])/2
+				const m_centerX = centerX + mid_radii * Math.cos(start_angle + rad_increment/6); // r2
+				const m_centerY = centerY + mid_radii * Math.sin(start_angle + rad_increment/6); // r2
+	
+				let angle = Math.atan2(m_centerY - centerY,m_centerX - centerX);
+				ctx.translate(m_centerX, m_centerY);
+				ctx.rotate(Math.PI/2+ angle);//
+				ctx.fillText(month_text,0,0);
+
+				ctx.restore()
+
+
+				ctx.font = `${fontSize}px Arial`;
+				ctx.fillStyle = "blue";	
+				ctx.textAlign = "center";
+				ctx.textBaseline = "middle";
+				ctx.save();
+				const nep_mid_radii = (radii[0] + radii[1])/2
+
+				const nep_m_centerX = centerX + nep_mid_radii * Math.cos(start_angle + rad_increment*(5/6) ); // r2
+				const nep_m_centerY = centerY + nep_mid_radii * Math.sin(start_angle + rad_increment*(5/6) ); // r2
+	
+				let angle_ = Math.atan2(nep_m_centerY - centerY,nep_m_centerX - centerX);
+
+				ctx.translate(nep_m_centerX, nep_m_centerY);
+				ctx.rotate(Math.PI/2 + angle_);//
+				ctx.fillText(month_text,0,0);
+				ctx.restore();
+
+			}
 			 // Draw week lines within the month
 			 for (let j = 1; j < 7; j++) {
 				const weekAngle = (i * angleIncrement + j * dayAngleIncrement) * (Math.PI / 180); // Convert to radians
