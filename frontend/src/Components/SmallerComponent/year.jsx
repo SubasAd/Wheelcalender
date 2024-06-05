@@ -16,6 +16,44 @@ const TrapezoidWithArcs = ({ canvasRef, }) => {
 			const nepDayNames = [
 				"s","m","t","w","thu","fri","sat"
 			]
+
+			const events = [
+				[  // Month 0 (January?)
+				  { "d": 1, "events": ["hi","bye"], "color": "green" },
+				  { "d": 2, "events": "hi this entry", "color": "green" },
+				  { "d": 18, "events": "hi", "color": "green" },
+				],
+				[], // Month 1 (February?) - Empty
+				[], [], [], [], [], [], [],[],
+				[  // Month 2 (March?)
+				  { "d": 3, "events": "hi", "color": "green" },
+				  { "d": 2, "events": "hi", "color": "green" },
+				  { "d": 8, "events": "hi", "color": "green" },
+				],
+				// ... more months (months 3 to 11 are empty based on the provided structure)
+			  ];
+			
+			  var eventsRadii = {
+				//"0":[latest_radii, prev_radii_count] //mothiindex:
+			  };
+
+			  
+			function findEventsByMonth(month,) {
+				// Input validation (optional, but recommended for robustness)
+				
+			  
+				
+				try {
+					
+					
+						return events[month]
+					
+				  
+				} catch (error) {
+					return []
+				}
+			  }
+			  
 			const centerX = canvas.width / 2;
 			const centerY = canvas.height / 2;
 			
@@ -70,6 +108,26 @@ const TrapezoidWithArcs = ({ canvasRef, }) => {
 			ctx.strokeStyle = colors[0];
 			ctx.lineWidth = widths[0];
 			ctx.stroke();		
+
+			function writeYear(year="2081"){
+					
+				const fontSize = 34;
+				ctx.font = `${fontSize}px Arial`;
+				ctx.fillStyle = "purple";	
+				ctx.textAlign = "center";
+				ctx.textBaseline = "middle";
+				ctx.save();
+				
+				
+					ctx.translate(centerX, centerY);
+					ctx.fillText(year,0,0);
+
+					ctx.restore()
+
+
+
+			}
+			writeYear()
 			// Draw lines from r2 to r8
 			const angleIncrement = 360 / 12; // 12 lines at equal space
 			const dayAngleIncrement = angleIncrement / 7; // 7 days in a week
@@ -230,10 +288,81 @@ const TrapezoidWithArcs = ({ canvasRef, }) => {
 					for (let day = 0; day<7; day++) {
 				
 						const  dayAngle = (i * angleIncrement + day * dayAngleIncrement) * (Math.PI / 180); // Convert to radians
+						
 						writeDay(week + 2, dayAngle, array[i][week][day]);
+						
 					}
-				
+					
 				}
+
+				function writeEvents() {
+					const to_print = findEventsByMonth(i);
+					try {
+						if (to_print.length === 0) {
+							return;
+						}
+						console.log(to_print);
+					} catch (error) {
+						return
+					}
+					
+					const outer_radii = radii[7];
+					let separation = 20; // Define a separation value, you can adjust as needed
+					let separation_N =0;
+					to_print.forEach((to_print_object,day_index) => {
+						let events = to_print_object.events;
+						if (typeof events === "string") {
+							events = [events];
+						}
+				
+						const day = `${to_print_object.d}`;
+						events[0] = `${day} ${events[0]}`;
+						
+						separation_N += (day_index+1);
+						
+						events.forEach((event, within_day_index) => {
+							// if (index === 1 && N > 1) {
+								// 	start_angle += angleIncrement;
+								// }
+							//let N = 1;
+							// if (events[0].length > 30) {
+							// 	N++;
+							// }
+							separation_N += within_day_index;
+							let inner_radii = outer_radii - separation_N* separation;
+							const rad_increment = angleIncrement * (Math.PI / 180);
+							const mid_radii = (outer_radii + inner_radii) / 2;
+				
+							
+							const m_centerX = centerX + mid_radii * Math.cos(angle +  rad_increment/10);
+							const m_centerY = centerY + mid_radii * Math.sin(angle +  rad_increment/10);
+				
+							let rot_angle = Math.atan2(m_centerY - centerY, m_centerX - centerX);
+							
+							const fontSize = 10;
+							ctx.font = `${fontSize}px Arial`;
+							ctx.fillStyle = to_print_object.color || "purple";    
+							ctx.textAlign = "left";
+							ctx.textBaseline = "middle";
+							ctx.save();
+				
+							ctx.translate(m_centerX, m_centerY);
+							ctx.rotate(Math.PI / 2 + rot_angle);
+							ctx.fillText(event, 0, 0);
+							ctx.restore();
+						});
+				
+						//outer_radii = inner_radii; // Update outer_radii for the next set of events
+					});
+				}
+				
+				// Example usage: assuming you have the required context (ctx), center coordinates (centerX, centerY), 
+				// radii array, and the function findEventsByMonth(i) properly defined.
+				// Call writeEvents() function where needed in your code.
+				
+				
+				writeEvents();
+					
 			}
 		}
 	}, [canvasRef]);
