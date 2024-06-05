@@ -69,6 +69,20 @@ const TrapezoidWithArcs = ({ canvasRef, }) => {
 			const colors = ['#FF0000', '#FF7F00', '#FFFF00', '#00FF00', '#0000FF', '#4B0082', '#9400D3', '#8B4513']; // Different colors
 			const widths = [4, 1, 1, 1, 1, 1, 1, 1]; // Widths for each circle
 	
+			const nepMonthToEng =[
+				 "Apr/May",
+				 "May/Jun",
+				 "Jun/Jul",
+				 "Jul/Aug",
+				 "Aug/Sep",
+				 "Sep/Oct",
+				 "Oct/Nov",
+				 "Nov/Dec",
+				 "Dec/Jan",
+				 "Jan/Feb",
+				 "Feb/Mar",
+				 "Mar/Apr",
+			]
 			//
 			function generateRandomNumber(min, max) {
 				return Math.floor(Math.random() * (max - min + 1)) + min;
@@ -201,7 +215,7 @@ const TrapezoidWithArcs = ({ canvasRef, }) => {
 
 					ctx.translate(nep_m_centerX, nep_m_centerY);
 					ctx.rotate(Math.PI/2 + angle_);//
-					ctx.fillText(monthNames[month_text_index],0,0);
+					ctx.fillText(nepMonthToEng[month_text_index],0,0);
 					ctx.restore();
 
 				}
@@ -316,7 +330,7 @@ const TrapezoidWithArcs = ({ canvasRef, }) => {
 						}
 				
 						const day = `${to_print_object.d}`;
-						events[0] = `${day} ${events[0]}`;
+						events[0] = `${day} : ${events[0]}`;
 						
 						separation_N += (day_index+1);
 						
