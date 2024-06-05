@@ -14,7 +14,7 @@ const TrapezoidWithArcs = ({ canvasRef, }) => {
 		const centerY = canvas.height / 2;
 		
 		const separation = 40;
-      	const initialRadius = centerX;	
+      	const initialRadius = centerX - 30;	
 		
 		const numCircles = 8;
 //			decrease separation geometrically.
@@ -46,17 +46,8 @@ const TrapezoidWithArcs = ({ canvasRef, }) => {
 		ctx.stroke();
 		//innermost radii
 
-		// Draw month names around the largest circle
-		const fontSize = 14;
-		ctx.font = `${fontSize}px Arial`;
-		ctx.fillStyle = '#000000';
-		monthNames.forEach((month, index) => {
-		  const angle = (index / monthNames.length) * 2 * Math.PI;
-		  const x = centerX + radii[0] * Math.cos(angle) - fontSize;
-		  const y = centerY + radii[0] * Math.sin(angle) + fontSize / 2;
-		  ctx.fillText(month, x, y);
-		});
-
+		
+	
 		  // Draw lines from r2 to r8
 		  const angleIncrement = 360 / 12; // 12 lines at equal space
 		  const dayAngleIncrement = angleIncrement / 7; // 7 days in a week
@@ -66,6 +57,20 @@ const TrapezoidWithArcs = ({ canvasRef, }) => {
 	
 			const startX = centerX + radii[0] * Math.cos(angle); // r2
 			const startY = centerY + radii[0] * Math.sin(angle); // r2
+
+			const topLeftX = startX;
+			const topLeftY = startY;
+			
+			const topRightX = centerX + radii[0] * Math.cos(angle + angleIncrement); // r2
+			const topRightY = centerY + radii[0] * Math.sin(angle + angleIncrement); // r2
+
+			const bottomLeftX = centerX + radii[1] * Math.cos(angle); // r2
+			const bottomLeftY = centerY + radii[1] * Math.sin(angle); // r2
+
+			const bottomRightX = centerX + radii[1] * Math.cos(angle + angleIncrement); // r2
+			const bottomRightY = centerY + radii[1] * Math.sin(angle + angleIncrement); // r2
+
+			
 			const endX = centerX + innermost_radii * Math.cos(angle); // r8
 			const endY = centerY + innermost_radii * Math.sin(angle); // r8
 	
@@ -75,7 +80,42 @@ const TrapezoidWithArcs = ({ canvasRef, }) => {
 			ctx.strokeStyle = 'black';
 			ctx.lineWidth = 1;
 			ctx.stroke();
+			
 
+			function writeMonthName(topLeftX, topLeftY, topRightX, topRightY, bottomLeftX, bottomLeftY, bottomRightX, bottomRightY, month_text) {
+				
+				const fontSize = 14;
+				ctx.font = `${fontSize}px Arial`;
+				ctx.fillStyle = '#dd0000';
+			
+				// Calculate the center point of the box
+				let m_centerX =   topLeftX +fontSize ;
+				let m_centerY = topLeftY - fontSize;
+			
+				// Calculate the angle of the vector from the center to the right top corner
+				
+				// Draw text aligned with the vector
+				ctx.fillStyle = "blue";
+				
+				ctx.font = `bold 10px Arial`;
+				ctx.textAlign = "center";
+				ctx.textBaseline = "middle";
+				ctx.save();
+				
+				
+				
+				let angle = Math.atan2(topRightY - centerY, topRightX - centerX);
+				ctx.translate(m_centerX, m_centerY);
+				ctx.rotate(Math.PI + angle);//
+				ctx.fillText(month_text,0,0);
+				ctx.restore();
+			}
+			
+			writeMonthName(topLeftX, topLeftY, topRightX, topRightY, bottomLeftX, bottomLeftY, bottomRightX, bottomRightY, monthNames[i])
+			//
+			// Function to draw text inside trapezoin.
+
+			//
 			 // Draw week lines within the month
 			 for (let j = 1; j < 7; j++) {
 				const weekAngle = (i * angleIncrement + j * dayAngleIncrement) * (Math.PI / 180); // Convert to radians
