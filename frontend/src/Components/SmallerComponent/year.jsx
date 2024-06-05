@@ -38,9 +38,9 @@ const TrapezoidWithArcs = ({ canvasRef, }) => {
 		});
 
 		//innermost radii
-		
+		const innermost_radii = radii[7] - separation * 3
 		ctx.beginPath();
-		ctx.arc(centerX, centerY, radii[7] - separation * 5, 0, 2 * Math.PI);
+		ctx.arc(centerX, centerY, innermost_radii, 0, 2 * Math.PI);
 		ctx.strokeStyle = colors[0];
 		ctx.lineWidth = widths[0];
 		ctx.stroke();
@@ -66,8 +66,8 @@ const TrapezoidWithArcs = ({ canvasRef, }) => {
 	
 			const startX = centerX + radii[0] * Math.cos(angle); // r2
 			const startY = centerY + radii[0] * Math.sin(angle); // r2
-			const endX = centerX + radii[7] * Math.cos(angle); // r8
-			const endY = centerY + radii[7] * Math.sin(angle); // r8
+			const endX = centerX + innermost_radii * Math.cos(angle); // r8
+			const endY = centerY + innermost_radii * Math.sin(angle); // r8
 	
 			ctx.beginPath();
 			ctx.moveTo(startX, startY);
