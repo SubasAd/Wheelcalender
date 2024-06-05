@@ -102,7 +102,7 @@ const TrapezoidWithArcs = ({ canvasRef, }) => {
 				let angle = Math.atan2(m_centerY - centerY,m_centerX - centerX);
 				ctx.translate(m_centerX, m_centerY);
 				ctx.rotate(Math.PI/2+ angle);//
-				ctx.fillText(monthNames[month_text_index],0,0);
+				ctx.fillText(monthNamesNepali[month_text_index],0,0);
 
 				ctx.restore()
 
@@ -121,7 +121,7 @@ const TrapezoidWithArcs = ({ canvasRef, }) => {
 
 				ctx.translate(nep_m_centerX, nep_m_centerY);
 				ctx.rotate(Math.PI/2 + angle_);//
-				ctx.fillText(monthNamesNepali[month_text_index],0,0);
+				ctx.fillText(monthNames[month_text_index],0,0);
 				ctx.restore();
 
 			}
