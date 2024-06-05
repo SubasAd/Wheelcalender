@@ -31,6 +31,26 @@ const TrapezoidWithArcs = ({ canvasRef, }) => {
 			const colors = ['#FF0000', '#FF7F00', '#FFFF00', '#00FF00', '#0000FF', '#4B0082', '#9400D3', '#8B4513']; // Different colors
 			const widths = [4, 1, 1, 1, 1, 1, 1, 1]; // Widths for each circle
 	
+			//
+			function generateRandomNumber(min, max) {
+				return Math.floor(Math.random() * (max - min + 1)) + min;
+			}
+			
+			function create3DArray(dim1, dim2, dim3, min, max) {
+				let array = new Array(dim1);
+				for (let i = 0; i < dim1; i++) {
+					array[i] = new Array(dim2);
+					for (let j = 0; j < dim2; j++) {
+						array[i][j] = new Array(dim3);
+						for (let k = 0; k < dim3; k++) {
+							array[i][j][k] = generateRandomNumber(min, max);
+						}
+					}
+				}
+				return array;
+			}
+			
+			let array = create3DArray(12, 5, 7, 1, 32);
 			// Clear the canvas
 			ctx.clearRect(0, 0, canvas.width, canvas.height);
 	
@@ -206,11 +226,11 @@ const TrapezoidWithArcs = ({ canvasRef, }) => {
 
 				}
 
-				for (let week = 0; week<=5; week++) {
-					for (let day = 0; day<=6; day++) {
+				for (let week = 0; week<5; week++) {
+					for (let day = 0; day<7; day++) {
 				
 						const  dayAngle = (i * angleIncrement + day * dayAngleIncrement) * (Math.PI / 180); // Convert to radians
-						writeDay(week + 2, dayAngle, week*day);
+						writeDay(week + 2, dayAngle, array[i][week][day]);
 					}
 				
 				}
