@@ -1,6 +1,12 @@
 import React, { useRef, useEffect } from 'react';
 
-
+const config = {
+	width:3000,
+	height:3000,
+	font_size:40,
+	initialRadius:10,
+	separation:100
+}
 
 const TrapezoidWithArcs = ({ canvasRef, }) => {
   useEffect(() => {
@@ -8,16 +14,14 @@ const TrapezoidWithArcs = ({ canvasRef, }) => {
 			const canvas = canvasRef.current;
 			const ctx = canvas.getContext('2d');
 	
-			const monthNames = ['Jansadsada', 'Feb', 'Mar', 'Apr', 'May', 'Jun', 'Jul', 'Aug', 'Sep', 'Oct', 'Nov', 'Dec'];
+			const monthNames = ['Jan', 'Feb', 'Mar', 'Apr', 'May', 'Jun', 'Jul', 'Aug', 'Sep', 'Oct', 'Nov', 'Dec'];
 			const monthNamesNepali = [
 				'बैशाख', 'जेठ', 'असार', 'साउन', 'भदौ', 'असोज', 'कार्तिक', 'मंसिर', 'पुष', 'माघ', 'फागुन', 'चैत'
 			];
 
-			const nepDayNames = [
-				"s","m","t","w","thu","fri","sat"
-			]
+			const nepDayNames = ["आइत","सोम", "मंगल","बुध","बिहि", "शुक्र","शनी"]
 
-			const events = [
+		const events = [
 				[  // Month 0 (January?)
 				  { "d": 1, "events": ["hi","bye"], "color": "green" },
 				  { "d": 2, "events": "hi this entry", "color": "green" },
@@ -57,17 +61,17 @@ const TrapezoidWithArcs = ({ canvasRef, }) => {
 			const centerX = canvas.width / 2;
 			const centerY = canvas.height / 2;
 			
-			const separation = 40;
-			const initialRadius = centerX - 30;	
+			const separation = config.separation;
+			const initialRadius = centerX - config.initialRadius;	
 			
 			const numCircles = 8;
 			//			decrease separation geometrically.
 				
 			const radii = Array.from({ length: numCircles }, (_, index) => initialRadius - separation * index);
 			
-
+			
 			const colors = ['#FF0000', '#FF7F00', '#FFFF00', '#00FF00', '#0000FF', '#4B0082', '#9400D3', '#8B4513']; // Different colors
-			const widths = [4, 1, 1, 1, 1, 1, 1, 1]; // Widths for each circle
+			const widths = [5, 2, 2, 2, 2, 2, 2, 2]; // Widths for each circle
 	
 			const nepMonthToEng =[
 				 "Apr/May",
@@ -116,16 +120,16 @@ const TrapezoidWithArcs = ({ canvasRef, }) => {
 			});
 
 			//innermost radii
-			const innermost_radii = radii[7] - separation * 3
+			const innermost_radii = radii[7] - separation * 7
 			ctx.beginPath();
 			ctx.arc(centerX, centerY, innermost_radii, 0, 2 * Math.PI);
 			ctx.strokeStyle = colors[0];
 			ctx.lineWidth = widths[0];
 			ctx.stroke();		
 
-			function writeYear(year="2081"){
+			function writeYear(year="२०८१"){
 					
-				const fontSize = 34;
+				const fontSize = config.font_size;
 				ctx.font = `${fontSize}px Arial`;
 				ctx.fillStyle = "purple";	
 				ctx.textAlign = "center";
@@ -181,7 +185,7 @@ const TrapezoidWithArcs = ({ canvasRef, }) => {
 			
 				function writeMonthName(start_angle, month_text_index) {
 					
-					const fontSize = 14;
+					const fontSize = config.font_size;
 					ctx.font = `${fontSize}px Arial`;
 					ctx.fillStyle = "blue";	
 					ctx.textAlign = "center";
@@ -228,7 +232,7 @@ const TrapezoidWithArcs = ({ canvasRef, }) => {
 
 				function writeDayName(start_angle, month_text) {
 					
-					const fontSize = 14;
+					const fontSize = config.font_size;
 					ctx.font = `${fontSize}px Arial`;
 					ctx.fillStyle = "blue";	
 					ctx.textAlign = "center";
@@ -275,7 +279,7 @@ const TrapezoidWithArcs = ({ canvasRef, }) => {
 				function writeDay(given_week, dayAngle, day_text){
 					
 					const start_angle = dayAngle;
-					const fontSize = 14;
+					const fontSize = 40;
 					ctx.font = `${fontSize}px Arial`;
 					ctx.fillStyle = "blue";	
 					ctx.textAlign = "center";
@@ -321,7 +325,7 @@ const TrapezoidWithArcs = ({ canvasRef, }) => {
 					}
 					
 					const outer_radii = radii[7];
-					let separation = 20; // Define a separation value, you can adjust as needed
+					let separation = config.separation; // Define a separation value, you can adjust as needed
 					let separation_N =0;
 					to_print.forEach((to_print_object,day_index) => {
 						let events = to_print_object.events;
@@ -353,7 +357,7 @@ const TrapezoidWithArcs = ({ canvasRef, }) => {
 				
 							let rot_angle = Math.atan2(m_centerY - centerY, m_centerX - centerX);
 							
-							const fontSize = 10;
+							const fontSize = 40;
 							ctx.font = `${fontSize}px Arial`;
 							ctx.fillStyle = to_print_object.color || "purple";    
 							ctx.textAlign = "left";
@@ -397,7 +401,7 @@ const ParentComponent = () => {
   return (
     <div>
       <h1>Canvas with Trapezoid and Arcs</h1>
-      <canvas ref={canvasRef} width="1000" height="1000"></canvas>
+      <canvas ref={canvasRef} width={config.width} height={config.height}></canvas>
       <TrapezoidWithArcs canvasRef={canvasRef} />
     </div>
   );
