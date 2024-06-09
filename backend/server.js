@@ -1,8 +1,5 @@
 
 
-
-// From JSON to ical
-
 import fs from 'fs';
 import path from 'path';
 import express from 'express';
@@ -18,7 +15,7 @@ const convertEvents = async (for_date) => {
     // Get the absolute path of the ICS file
 	var icsFilePath = "";
 	if (for_date){
-		icsFilePath = path.join(path.resolve(),'ics_folder', 'Nepali Dates.ics');
+		icsFilePath = path.join(path.resolve(),'ics_folder', 'events1.ics');
 	}else{
 
 		icsFilePath = path.join(path.resolve(),'ics_folder', 'Nepali Events.ics');
@@ -39,6 +36,7 @@ const convertEvents = async (for_date) => {
 
 app.get('/get_events',async (req, res) => {
   const jsonData = await convertEvents();
+  jsonData = jsonData['0']['VEVENT']
   if (jsonData) {
     res.json(jsonData);
   } else {
@@ -47,7 +45,8 @@ app.get('/get_events',async (req, res) => {
 });
 
 app.get('/get_dates',async (req, res) => {
-	const jsonData = await convertEvents(true);
+	let jsonData = await convertEvents(true);
+  jsonData = jsonData['0']
 	if (jsonData) {
 	  res.json(jsonData);
 	} else {
