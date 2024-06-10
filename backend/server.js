@@ -34,6 +34,7 @@ const convertEvents = async (for_date) => {
   }
 };
 
+
 app.get('/get_events',async (req, res) => {
   const jsonData = await convertEvents();
   jsonData = jsonData['0']['VEVENT']
@@ -53,6 +54,15 @@ app.get('/get_dates',async (req, res) => {
 	  res.status(500).json({ error: 'Failed to parse ICS data' });
 	}
   });
+
+app.get('/get_color',async (req,res)=>{
+  fs.readFile('ics_folder/dat.json',(err,data)=>{
+    if(err) res.json(err)
+      else{
+    res.json(JSON.parse(data))
+      }
+  })
+})
 app.listen(PORT, () => {
   console.log(`Server is running on http://localhost:${PORT}`);
 });

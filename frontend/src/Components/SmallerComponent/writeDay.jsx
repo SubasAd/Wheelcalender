@@ -1,9 +1,9 @@
-export function writeDay(ctx, centerX, centerY, dayAngleIncrement, radii, given_week, dayAngle, day_text) {
+export function writeDay(ctx, centerX, centerY, dayAngleIncrement, radii, given_week, dayAngle, day_text,color="black") {
 
 	const start_angle = dayAngle;
 	const fontSize = 40;
 	ctx.font = `${fontSize}px Arial`;
-	ctx.fillStyle = "blue";
+	ctx.fillStyle = color;
 	ctx.textAlign = "center";
 	ctx.textBaseline = "middle";
 	ctx.save();
