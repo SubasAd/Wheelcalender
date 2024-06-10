@@ -15,6 +15,7 @@
     "cors": "^2.8.5",
     "express": "^4.19.2",
     "ical2json": "^3.2.0",
-    "ics-to-json": "^1.0.0"
+    "ics-to-json": "^1.0.0",
+    "nodemon": "^3.1.3"
   }
 }

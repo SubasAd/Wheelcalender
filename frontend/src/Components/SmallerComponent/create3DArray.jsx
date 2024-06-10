@@ -18,6 +18,7 @@ const devanagariNumbers = [
 ];
 
 const date_in_2081 = [31, 32, 31, 32, 31, 30, 30, 30, 29, 30, 29, 31];
+ 
 
 function mergeArrays(arr1, arr2) {
     let merged = [];
@@ -33,8 +34,10 @@ function mergeArrays(arr1, arr2) {
     return merged;
 }
 export function create3DArray() {
+       
 
 const bikramSambatDates = [];
+const gregorianDates = []
 function calculateMonth(i,week_num) {
     let count = 1;
 
@@ -72,4 +75,63 @@ for (let i = 0; i < date_in_2081.length; i++) {
 console.log(bikramSambatDates)
 return bikramSambatDates
 
+}
+function isDateBetween(date1, date2, target) {
+    // Ensure the dates are in 'YYYY-MM-DD' format for accurate comparison
+    const formatDateString = date => {
+        const [year, month, day] = date.split('-');
+        return `${year.padStart(4, '0')}-${month.padStart(2, '0')}-${day.padStart(2, '0')}`;
+    };
+  
+    // Format the dates
+    date1 = formatDateString(date1);
+    date2 = formatDateString(date2);
+    target = formatDateString(target);
+  
+    // Compare the strings lexicographically
+    return target >= date1 && target <= date2;
+  }
+
+export function getEvents(month){
+    let eventsWithDate = JSON.parse(localStorage.getItem("events"));
+    let events = []
+    eventsWithDate.forEach(element=>{
+        let event={}
+        let from = element["From"]
+        let to = element["To"]
+        let eventx = element["Event"]
+        let month_from_from = parseInt(from.split("-")[1])-1
+        let date_from_from=devanagariNumbers[parseInt(from.split("-")[2])-1]
+        let date_from_to=devanagariNumbers[parseInt(to.split("-")[2])-1]
+        if(month_from_from ==  month) {
+            if(date_from_from==date_from_to) event["day"] = date_from_from
+            else event["day"] = date_from_from.concat("-").concat(date_from_to)
+            event["event"] = eventx
+            events.push(event)
+        }
+    })
+return events
+}
+  
+
+export function getColor(month,date) {
+   date = devanagariNumbers.indexOf(date)
+   
+    let colors = JSON.parse(localStorage.getItem("events"));
+    
+    const targetDate = `2081-${month+1}-${date+1}`;
+    let  color = "black"
+    colors.forEach(element => {
+
+       
+        if (targetDate === element["From"]) {
+            
+            
+            color =  element["Color"]
+        };
+        if (targetDate === element["To"]) color =  element["Color"];
+        if(isDateBetween(element['From'],element['To'],targetDate)) color = element['Color']
+
+    });
+    return color
 }
