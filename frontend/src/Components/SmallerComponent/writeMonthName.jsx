@@ -2,7 +2,7 @@ import { config, monthNamesNepali } from './create3DArray';
 
 export function writeMonthName(ctx, centerX, centerY, radii, angleIncrement, nepMonthToEng, start_angle, month_text_index) {
 
-	const fontSize = config.font_size;
+	const fontSize = 70;
 	ctx.font = `${fontSize}px Arial`;
 	ctx.fillStyle = "blue";
 	ctx.textAlign = "center";
@@ -22,7 +22,7 @@ export function writeMonthName(ctx, centerX, centerY, radii, angleIncrement, nep
 	ctx.restore();
 
 
-	ctx.font = `${fontSize}px Arial`;
+	ctx.font = `${50}px Arial`;
 	ctx.fillStyle = "blue";
 	ctx.textAlign = "center";
 	ctx.textBaseline = "middle";

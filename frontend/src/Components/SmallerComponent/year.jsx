@@ -60,12 +60,13 @@ const TrapezoidWithArcs = ({ canvasRef, }) => {
 			for (let i = 0; i < 12; i++) {
 				events.push(getEvents(i))
 			
-				const angle = drawCalender2(i, angleIncrement, centerX, radii, centerY, innermost_radii, ctx);
+				let angle = drawCalender2(i, angleIncrement, centerX, radii, centerY, innermost_radii, ctx);
+				angle = angle-Math.PI/2-Math.PI/6
 			
 				writeMonthName(ctx,centerX,centerY, radii,angleIncrement,nepMonthToEng,angle,i)
 				for (let j = 1; j <= 7; j++) {
 					
-					const  weekAngle = (i * angleIncrement + j * dayAngleIncrement) * (Math.PI / 180); // Convert to radians
+					const  weekAngle = (i * angleIncrement + j * dayAngleIncrement) * (Math.PI / 180)-Math.PI/2-Math.PI/6; // Convert to radians
 					writeWeekName(ctx,centerX, centerY,dayAngleIncrement, radii,weekAngle ,nepDayNames[j-1] ) 
 					
 					if ((j ==7) || (weekAngle % (2 * Math.PI / 12) === 0)) continue; // Skip if it's the same as the month line
@@ -79,7 +80,7 @@ const TrapezoidWithArcs = ({ canvasRef, }) => {
 
 					for (let day = 0; day<7; day++) {
 						;
-						const  dayAngle = (i * angleIncrement + (day+1) * dayAngleIncrement) * (Math.PI / 180);
+						const  dayAngle = (i * angleIncrement + (day+1) * dayAngleIncrement) * (Math.PI / 180)-Math.PI/2-Math.PI/6;
 						let color = getColor(i,array[i][week][day])
 						console.log("Color",color,i,array[i][week][day])
 						
