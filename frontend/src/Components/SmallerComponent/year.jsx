@@ -11,6 +11,7 @@ import { writeDay } from './writeDay';
 import { writeEvents } from './writeEvents';
 import { getEvents } from './create3DArray';
 import { curvedText } from './curvedText';
+import Heading from './heading';
 
 const TrapezoidWithArcs = ({ canvasRef, }) => {
   
@@ -60,12 +61,13 @@ const TrapezoidWithArcs = ({ canvasRef, }) => {
 			for (let i = 0; i < 12; i++) {
 				events.push(getEvents(i))
 			
-				const angle = drawCalender2(i, angleIncrement, centerX, radii, centerY, innermost_radii, ctx);
+				let angle = drawCalender2(i, angleIncrement, centerX, radii, centerY, innermost_radii, ctx);
+				angle = angle-Math.PI/2-Math.PI/6
 			
 				writeMonthName(ctx,centerX,centerY, radii,angleIncrement,nepMonthToEng,angle,i)
 				for (let j = 1; j <= 7; j++) {
 					
-					const  weekAngle = (i * angleIncrement + j * dayAngleIncrement) * (Math.PI / 180); // Convert to radians
+					const  weekAngle = (i * angleIncrement + j * dayAngleIncrement) * (Math.PI / 180)-Math.PI/2-Math.PI/6; // Convert to radians
 					writeWeekName(ctx,centerX, centerY,dayAngleIncrement, radii,weekAngle ,nepDayNames[j-1] ) 
 					
 					if ((j ==7) || (weekAngle % (2 * Math.PI / 12) === 0)) continue; // Skip if it's the same as the month line
@@ -79,7 +81,7 @@ const TrapezoidWithArcs = ({ canvasRef, }) => {
 
 					for (let day = 0; day<7; day++) {
 						;
-						const  dayAngle = (i * angleIncrement + (day+1) * dayAngleIncrement) * (Math.PI / 180);
+						const  dayAngle = (i * angleIncrement + (day+1) * dayAngleIncrement) * (Math.PI / 180)-Math.PI/2-Math.PI/6;
 						let color = getColor(i,array[i][week][day])
 						console.log("Color",color,i,array[i][week][day])
 						
@@ -118,11 +120,62 @@ const ParentComponent = () => {
   }, [canvasRef]);
 
   return (
-    <div>
-      
+	< >
+   
+      <div style={{ 
+        fontSize: `100pt`,
+		fontWeight: 'bold',
+		marginBottom: '300px',
+		position: 'relative',
+		left: '1800px', // Start at the desired horizontal position
+		whiteSpace: 'nowrap', 
+		// Prevent text wrapping
+		
+		// Adding some space between the heading and the canvas
+      }}>
+        श्री महेन्द्र ज्योति माध्यमिक विद्यालय<br/>
+      	&emsp;&emsp;	महाशिला -५ , लुंखु, पर्वत   <br/>
+      	&emsp;&emsp;	<u style={{
+			color:"red"
+		}}>वार्षिक कार्यपात्रो -२०८१</u><br/>
+      </div>
+	  <div style={{ 
+        fontSize: `100pt`,
+		fontWeight: 'bold',
+		marginBottom: '2px',
+		position: 'relative',
+		left: '1000px', // Start at the desired horizontal position
+		whiteSpace: 'nowrap',
+		// Prevent text wrapping
+		
+		// Adding some space between the heading and the canvas
+      }}>
       <canvas ref={canvasRef} width={config.width} height={config.height}></canvas>
       <TrapezoidWithArcs canvasRef={canvasRef} />
     </div>
+	<div style={{ 
+        fontSize: `20pt`,
+		fontWeight: 'italic',
+		marginBottom: '300px',
+		position: 'relative',
+		left: '4500px', // Start at the desired horizontal position
+		whiteSpace: 'nowrap', 
+		// Prevent text wrapping
+		
+		// Adding some space between the heading and the canvas
+      }}>
+        <br/>
+
+<p style={{align:'right' }}> प्रधानाध्यापक: गोपाल प्रसाद शर्मा </p><br/>
+डिजाइन : विष्णुमाया  शर्मा <br/>
+तयार गर्ने : लेखनाथ अधिकारी <br/>
+सहयोग : subasadhikari0025@gmail.com<br/>
+
+  <br/>
+    
+      </div>
+	</>
+	
   );
 };
 
