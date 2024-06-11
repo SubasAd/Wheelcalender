@@ -11,6 +11,7 @@ import { writeDay } from './writeDay';
 import { writeEvents } from './writeEvents';
 import { getEvents } from './create3DArray';
 import { curvedText } from './curvedText';
+import Heading from './heading';
 
 const TrapezoidWithArcs = ({ canvasRef, }) => {
   
@@ -119,11 +120,62 @@ const ParentComponent = () => {
   }, [canvasRef]);
 
   return (
-    <div>
-      
+	< >
+   
+      <div style={{ 
+        fontSize: `100pt`,
+		fontWeight: 'bold',
+		marginBottom: '300px',
+		position: 'relative',
+		left: '1800px', // Start at the desired horizontal position
+		whiteSpace: 'nowrap', 
+		// Prevent text wrapping
+		
+		// Adding some space between the heading and the canvas
+      }}>
+        श्री महेन्द्र ज्योति माध्यमिक विद्यालय<br/>
+      	&emsp;&emsp;	महाशिला -५ , लुंखु, पर्वत   <br/>
+      	&emsp;&emsp;	<u style={{
+			color:"red"
+		}}>वार्षिक कार्यपात्रो -२०८१</u><br/>
+      </div>
+	  <div style={{ 
+        fontSize: `100pt`,
+		fontWeight: 'bold',
+		marginBottom: '2px',
+		position: 'relative',
+		left: '1000px', // Start at the desired horizontal position
+		whiteSpace: 'nowrap',
+		// Prevent text wrapping
+		
+		// Adding some space between the heading and the canvas
+      }}>
       <canvas ref={canvasRef} width={config.width} height={config.height}></canvas>
       <TrapezoidWithArcs canvasRef={canvasRef} />
     </div>
+	<div style={{ 
+        fontSize: `20pt`,
+		fontWeight: 'italic',
+		marginBottom: '300px',
+		position: 'relative',
+		left: '4500px', // Start at the desired horizontal position
+		whiteSpace: 'nowrap', 
+		// Prevent text wrapping
+		
+		// Adding some space between the heading and the canvas
+      }}>
+        <br/>
+
+<p style={{align:'right' }}> प्रधानाध्यापक: गोपाल प्रसाद शर्मा </p><br/>
+डिजाइन : विष्णुमाया  शर्मा <br/>
+तयार गर्ने : लेखनाथ अधिकारी <br/>
+सहयोग : subasadhikari0025@gmail.com<br/>
+
+  <br/>
+    
+      </div>
+	</>
+	
   );
 };
 

@@ -35,7 +35,7 @@ export function writeEvents(ctx, angle, centerX, centerY, i, events, radii, angl
 
 			let rot_angle = Math.atan2(m_centerY - centerY, m_centerX - centerX);
 
-			let fontSize = 30-separation_N;
+			let fontSize = 40-separation_N;
 			
 			ctx.font = `${fontSize}px Arial`;
 			ctx.fillStyle = color || "purple";

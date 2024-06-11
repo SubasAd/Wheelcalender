@@ -1,7 +1,7 @@
 export function writeDay(ctx, centerX, centerY, dayAngleIncrement, radii, given_week, dayAngle, day_text,color="black") {
 
 	const start_angle = dayAngle;
-	const fontSize = 40;
+	const fontSize = 55;
 	ctx.font = `${fontSize}px Arial`;
 	ctx.fillStyle = color;
 	ctx.textAlign = "center";

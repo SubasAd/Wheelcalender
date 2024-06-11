@@ -15,7 +15,7 @@ export function drawStructureOfCalender(ctx, canvas, radii, centerX, centerY, co
 	});
 
 	//innermost radii
-	const innermost_radii = radii[7] - separation * 7;
+	const innermost_radii = radii[7] - separation * 8;
 	ctx.beginPath();
 	ctx.arc(centerX, centerY, innermost_radii, 0, 2 * Math.PI);
 	ctx.strokeStyle = colors[0];

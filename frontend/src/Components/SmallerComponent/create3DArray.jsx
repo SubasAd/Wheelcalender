@@ -1,8 +1,8 @@
 export const config = {
-	width: 3000,
-	height: 3000,
-	font_size: 40,
-	initialRadius: 10,
+	width: 3500,
+	height: 3500,
+	font_size: 55,
+	initialRadius: 2,
 	separation: 100
 };
 const monthNames = ['Jan', 'Feb', 'Mar', 'Apr', 'May', 'Jun', 'Jul', 'Aug', 'Sep', 'Oct', 'Nov', 'Dec'];
