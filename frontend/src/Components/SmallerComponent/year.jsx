@@ -35,9 +35,34 @@ const TrapezoidWithArcs = ({ canvasRef, }) => {
     // Set error message
     
   });
-
+  const drawRotatedText = (ctx, centerX, centerY,radius, start_angle,text,dayAngleIncrement,fontSize) => {
 	
+	
+	ctx.font = `${fontSize}px Arial`;
+	ctx.fillStyle = "blue";
+	ctx.textAlign = "center";
+	ctx.textBaseline = "middle";
+	ctx.save();
+	
+	const rad_increment = dayAngleIncrement * (Math.PI / 180);
+	const mid_radii = radius
+	const m_centerX = centerX + mid_radii * Math.cos(start_angle + rad_increment - rad_increment / 2); // r2
+	const m_centerY = centerY + mid_radii * Math.sin(start_angle + rad_increment - rad_increment / 2); // r2
 
+	let angle = Math.atan2(m_centerY - centerY, m_centerX - centerX);
+	ctx.translate(m_centerX, m_centerY);
+	ctx.rotate((Math.PI / 2 + angle)); //
+	ctx.fillText(text, 0, 0);
+
+	ctx.restore();
+
+  };
+
+	const note1 = ["*प्रत्येक","महिनाको","मसान्तमा", "स्टाफ", "बैठक","र","आवश्यकता ","अनुसार", "वि. व्य. स."," को"," बैठक","नियमित","रुपमा","बस्ने","छ। "]
+
+	const note2 = ["गाउँ पालिका","शिक्षा शाखा ", "बाट"," प्रकाशित ", "calender ","मा","उल्लेखित","क्रियाकलाप","सोहि","अनुसार","संचालन","हुनेछन। " ] 
+	
+  	const karyapatro = [ "वा","र्षि","क" ,"का","र्य", "पा","त्रो" ]
 	if (canvasRef.current) {
 
 		
@@ -50,7 +75,34 @@ const TrapezoidWithArcs = ({ canvasRef, }) => {
 			
 			const { radii, centerX, centerY, colors, widths, separation, nepMonthToEng } = getCanvasValues(canvas);
 			var { innermost_radii, array } = drawStructureOfCalender(ctx, canvas, radii, centerX, centerY, colors, widths, separation);		
-
+			let angle = 0
+			note1.forEach((element,index)=>{
+				let totalLength = 0
+				note1.forEach(el => {
+					totalLength += el.length;
+				  });
+				  let angle_increment =  0.8*(note1.length-1)*360/(totalLength)
+				drawRotatedText(ctx, centerX, centerY, (15*innermost_radii+radii[7])/16, -1*Math.PI ,element, angle, 20);
+				angle+=angle_increment
+			})
+			note2.forEach((element,index)=>{
+				let totalLength = 0
+				note2.forEach(el => {
+					totalLength += el.length;
+				  });
+				  let angle_increment =  0.8*(note1.length-1)*360/(totalLength)
+				drawRotatedText(ctx, centerX, centerY, (100*innermost_radii+radii[7])/101, -1*Math.PI ,element, angle,20);
+				angle+=angle_increment
+			})
+			karyapatro.forEach((element,index)=>{
+				let totalLength = 0
+				karyapatro.forEach(el => {
+					totalLength += el.length;
+				  });
+				  let angle_increment =  0.5*(karyapatro.length-1)*360/(totalLength)
+				drawRotatedText(ctx, centerX, centerY, (innermost_radii-70), -1*Math.PI/3 ,element, angle, 70);
+				angle+=angle_increment
+			})
 			
 			writeYear(centerX,centerY,ctx,"२०८१")
 			// Draw lines from r2 to r8
@@ -164,18 +216,32 @@ const ParentComponent = () => {
 		
 		// Adding some space between the heading and the canvas
       }}>
-        <br/>
+<p> प्रधानाध्यापक: गोपाल प्रसाद शर्मा </p><br/>
 
-<p style={{align:'right' }}> प्रधानाध्यापक: गोपाल प्रसाद शर्मा </p><br/>
-डिजाइन : विष्णुमाया  शर्मा <br/>
-तयार गर्ने : लेखनाथ अधिकारी <br/>
-सहयोग : subasadhikari0025@gmail.com<br/>
+</div>
+<div style={{ 
+        fontSize: `20pt`,
+		fontWeight: 'italic',
+		marginBottom: '300px',
+		position: 'absolute',
+		top:'4300px',
+		left: '500px', // Start at the desired horizontal position
+		whiteSpace: 'nowrap', 
+		// Prevent text wrapping
+		
+		// Adding some space between the heading and the canvas
+      }}>
 
-  <br/>
-    
-      </div>
-	</>
-	
+<p>
+<pre> 
+संयोजक: विष्णुमाया  शर्मा <br/>
+सदस्य : लेखनाथ अधिकारी <br/>       लोकमणी सापकोटा<br/>       निता कुमारी उचै <br/>
+सहयोग : subasadhikari0025@gmail.com
+</pre>
+</p>
+</div>
+
+ </>
   );
 };
 

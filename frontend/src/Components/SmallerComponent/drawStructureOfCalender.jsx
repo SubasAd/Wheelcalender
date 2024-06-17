@@ -13,9 +13,16 @@ export function drawStructureOfCalender(ctx, canvas, radii, centerX, centerY, co
 		ctx.lineWidth = widths[index];
 		ctx.stroke();
 	});
+	
 
 	//innermost radii
 	const innermost_radii = radii[7] - separation * 8;
+	ctx.beginPath();
+		ctx.arc(centerX, centerY, (15*innermost_radii+radii[0])/16, 0, 2 * Math.PI);
+		ctx.strokeStyle = colors[0];
+		ctx.lineWidth = widths[3];
+		ctx.stroke();
+
 	ctx.beginPath();
 	ctx.arc(centerX, centerY, innermost_radii, 0, 2 * Math.PI);
 	ctx.strokeStyle = colors[0];

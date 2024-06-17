@@ -3,522 +3,631 @@
    "From": "2081-1-1",
    "To": "2081-1-1",
    "Event": "नयाँ बर्ष, नयाँ शै.स.को सुरुवात ",
-   "Color": "red"
+   "Color": "red",
+   "Sign": ""
  },
  {
    "From": "2081-1-2",
    "To": "2081-1-2",
    "Event": "नयाँ भर्ना अभियान",
-   "Color": "blue"
+   "Color": "blue",
+   "Sign": ""
  },
  {
    "From": "2081-1-4",
    "To": "2081-1-4",
    "Event": "चैते दशैँ",
-   "Color": "red"
+   "Color": "red",
+   "Sign": ""
  },
  {
    "From": "2081-1-5",
    "To": "2081-1-5",
    "Event": "राम नवमी",
-   "Color": "red"
+   "Color": "red",
+   "Sign": ""
  },
  {
    "From": "2081-1-9",
    "To": "2081-1-9",
    "Event": "पठनपाठन सुरू",
-   "Color": "blue"
+   "Color": "blue",
+   "Sign": ""
  },
  {
    "From": "2081-1-12",
    "To": "2081-1-18",
    "Event": "वार्षिकोत्सव  सप्ताह",
-   "Color": "blue"
+   "Color": "blue",
+   "Sign": ""
  },
  {
-   "From": "2081-1-19",
-   "To": "2081-1-19",
+   "From": "2081-1-18",
+   "To": "2081-1-18",
    "Event": "मजदुर दिवस",
-   "Color": "red"
+   "Color": "red",
+   "Sign": ""
  },
  {
    "From": "2081-1-31",
    "To": "2081-1-31",
-   "Event": "स्टाफ मिटिंग,",
-   "Color": "blue"
+   "Event": "स्टाफ मिटिंग , TIP निर्माण",
+   "Color": "blue",
+   "Sign": ""
  },
- {
-  "From": "2081-1-31",
-  "To": "2081-1-31",
-  "Event": " TIP निर्माण",
-  "Color": "blue"
-},
  {
    "From": "2081-2-1",
    "To": "2081-2-4",
    "Event": "हस्तलेखन सप्ताह",
-   "Color": "blue"
- },
- {
-   "From": "2081-2-4",
-   "To": "2081-2-4",
-   "Event": "हस्तलेखन प्रतियोगिता (१-८)",
-   "Color": "blue"
+   "Color": "blue",
+   "Sign": ""
  },
  {
    "From": "2081-2-10",
    "To": "2081-2-10",
+   "Event": "हस्तलेखन प्रतियोगिता (१-८)",
+   "Color": "red",
+   "Sign": ""
+ },
+ {
+   "From": "2081-2-11",
+   "To": "2081-2-11",
    "Event": "बुद्ध जयन्ती",
-   "Color": "red"
+   "Color": "blue",
+   "Sign": ""
  },
  {
    "From": "2081-2-11",
    "To": "2081-2-11",
    "Event": "चित्रकला प्रतियोगिता (१-८) ",
-   "Color": "blue"
+   "Color": "blue",
+   "Sign": ""
  },
  {
    "From": "2081-2-11",
    "To": "2081-2-11",
    "Event": "हिज्जे प्रतियोगिता (८-१२)",
-   "Color": "blue"
+   "Color": "blue",
+   "Sign": ""
  },
  {
    "From": "2081-2-15",
    "To": "2081-2-15",
    "Event": "गणतन्त्र दिवस",
-   "Color": "red"
+   "Color": "red",
+   "Sign": ""
  },
  {
    "From": "2081-2-18",
    "To": "2081-2-18",
    "Event": "निबन्ध लेखन (९-१२)",
-   "Color": "blue"
+   "Color": "blue",
+   "Sign": ""
  },
  {
    "From": "2081-2-25",
    "To": "2081-2-25",
    "Event": "हाजिरी जवाफ प्रतियोगिता",
-   "Color": "blue"
+   "Color": "blue",
+   "Sign": ""
  },
  {
   "From": "2081-2-25",
   "To": "2081-2-25",
-  "Event": "  (सबै तह)",
-  "Color": "blue"
+  "Event": " (सबै तह)",
+  "Color": "blue",
+  "Sign": ""
 },
  {
    "From": "2081-2-32",
    "To": "2081-2-32",
    "Event": "स्टाफ मिटिंग",
-   "Color": "blue"
+   "Color": "blue",
+   "Sign": ""
  },
  {
    "From": "2081-3-4",
    "To": "2081-3-7",
    "Event": "एकाई परीक्षा ",
-   "Color": "green"
+   "Color": "green",
+   "Sign": ""
  },
  {
    "From": "2081-3-9",
    "To": "2081-3-31",
    "Event": "बर्षे बिदा",
-   "Color": "red"
+   "Color": "red",
+   "Sign": ""
  },
  {
    "From": "2081-4-1",
    "To": "2081-4-9",
    "Event": "बर्षे  बिदा ",
-   "Color": "red"
+   "Color": "red",
+   "Sign": ""
  },
  {
    "From": "2081-4-11",
    "To": "2081-4-11",
    "Event": "सरसफाई कार्यक्रम ",
-   "Color": "blue"
+   "Color": "blue",
+   "Sign": ""
  },
  {
    "From": "2081-4-18",
    "To": "2081-4-18",
    "Event": "कविता लेखन प्रतियोगिता (६-१२)",
-   "Color": "blue"
+   "Color": "blue",
+   "Sign": ""
  },
  {
    "From": "2081-4-25",
    "To": "2081-4-25",
-   "Event": "Spelling contest (all)",
-   "Color": "blue"
+   "Event": "स्थानीय विदा ",
+   "Color": "purple ",
+   "Sign": ""
  },
  {
-   "From": "2081-4-32",
-   "To": "2081-4-32",
+   "From": "2081-4-31",
+   "To": "2081-4-31",
    "Event": "स्टाफ मिटिंग  ",
-   "Color": "blue"
+   "Color": "blue",
+   "Sign": ""
  },
+ {
+  "From": "2081-5-2",
+  "To": "2081-5-2",
+  "Event": "स्थानीय विदा ",
+  "Color": "purple",
+  "Sign": ""
+},
  {
    "From": "2081-5-3",
    "To": "2081-5-3",
    "Event": "जनै पूर्णिमा ",
-   "Color": "red "
+   "Color": "red ",
+   "Sign": ""
  },
  {
    "From": "2081-5-7",
    "To": "2081-5-7",
-   "Event": "वक्तृत्वकला प्रतियोगिता (९ -१२)",
-   "Color": "blue"
+   "Event": "अंग्रेजी हिज्जे  प्रतियोगिता (९ -१२)",
+   "Color": "blue",
+   "Sign": ""
  },
  {
    "From": "2081-5-10",
    "To": "2081-5-10",
    "Event": "श्री कृष्णजन्माष्टमी ",
-   "Color": "red "
+   "Color": "red ",
+   "Sign": ""
  },
  {
    "From": "2081-5-11",
    "To": "2081-5-18",
-   "Event": "प्रथम त्रैमासिक परीक्षा",
-   "Color": "green "
+   "Event": "प्रथम त्रैमासिक परीक्षा ",
+   "Color": "green",
+   "Sign": ""
  },
  {
    "From": "2081-5-21",
    "To": "2081-5-21",
    "Event": "हरितालिका तीज(महिला विदा)",
-   "Color": "red "
+   "Color": "red ",
+   "Sign": ""
  },
+ {
+  "From": "2081-5-23",
+  "To": "2081-5-23",
+  "Event": "शिक्षा दिवस ",
+  "Color": "blue ",
+  "Sign": ""
+},
+{
+ "From": "2081-5-23",
+ "To": "2081-5-23",
+ "Event": "वक्तृत्वकला प्रतियोगिता ",
+ "Color": "blue ",
+ "Sign": ""
+},
  {
    "From": "2081-5-28",
    "To": "2081-5-28",
-   "Event": "प्रथम त्रैमासिक परीक्षाको",
-   "Color": "blue"
+   "Event": "प्रथम त्रैमासिक परीक्षा नतिजा ",
+   "Color": "blue",
+   "Sign": ""
  },
  {
   "From": "2081-5-28",
   "To": "2081-5-28",
-  "Event": "  नतिजा प्रकाशन",
-  "Color": "blue"
-},
-{
-  "From": "2081-5-28",
-  "To": "2081-5-28",
-  "Event": "  अभिभावक भेला ",
-  "Color": "blue"
+  "Event": " प्रकाशन, अभिभावक भेला ",
+  "Color": "blue",
+  "Sign": ""
 },
  {
    "From": "2081-5-31",
    "To": "2081-5-31",
    "Event": "स्टाफ मिटिंग ",
-   "Color": "blue"
+   "Color": "blue",
+   "Sign": ""
  },
  {
    "From": "2081-6-3",
    "To": "2081-6-3",
    "Event": "संविधान दिवस ",
-   "Color": "red "
+   "Color": "red ",
+   "Sign": ""
  },
  {
    "From": "2081-6-4",
    "To": "2081-6-4",
    "Event": "हाजिरी जवाफ प्रतियोगिता (१-८)",
-   "Color": "blue"
+   "Color": "blue",
+   "Sign": ""
  },
  {
    "From": "2081-6-11",
    "To": "2081-6-11",
    "Event": "Spelling contest (1-8)",
-   "Color": "blue"
+   "Color": "blue",
+   "Sign": ""
  },
  {
    "From": "2081-6-16",
    "To": "2081-6-16",
-   "Event": "नृत्य, गायन,तथा शुभकामना",
-   "Color": "blue "
+   "Event": "नृत्य, गायन,तथा",
+   "Color": "blue ",
+   "Sign": ""
  },
  {
   "From": "2081-6-16",
   "To": "2081-6-16",
-  "Event": "  आदानप्रदान ",
-  "Color": "blue "
+  "Event": "  शुभकामना  आदानप्रदान ",
+  "Color": "blue ",
+  "Sign": ""
 },
  {
    "From": "2081-6-17",
    "To": "2081-6-30",
    "Event": "दशैं विदा ",
-   "Color": "red "
+   "Color": "red ",
+   "Sign": ""
  },
  {
    "From": "2081-7-1",
    "To": "2081-7-1",
    "Event": "कोजाग्रत पूर्णिमा ",
-   "Color": "red "
+   "Color": "red ",
+   "Sign": ""
  },
  {
    "From": "2081-7-2",
    "To": "2081-7-14",
    "Event": "वर्षे विदाको सट्टा विदा ",
-   "Color": "red "
+   "Color": "red ",
+   "Sign": ""
  },
  {
    "From": "2081-7-15",
    "To": "2081-7-19",
    "Event": "तिहार विदा ",
-   "Color": "red "
+   "Color": "red ",
+   "Sign": ""
  },
- {
-   "From": "2081-7-20",
-   "To": "2081-7-21",
-   "Event": "स्थानीय विदा ",
-   "Color": " red "
- },
+
  {
    "From": "2081-7-22",
    "To": "2081-7-22",
    "Event": "छठ पर्व ",
-   "Color": "red "
+   "Color": "red ",
+   "Sign": ""
  },
  {
    "From": "2081-7-23",
    "To": "2081-7-23",
    "Event": "स्थानीय विदा ",
-   "Color": "red "
+   "Color": "purple",
+   "Sign": ""
  },
  {
    "From": "2081-7-30",
    "To": "2081-7-30",
-   "Event": "वि.व्य.स.र शिक्षक स्टाफको",
-   "Color": " blue "
+   "Event": "वि.व्य.स.र शिक्षक स्टाफ",
+   "Color": " blue ",
+   "Sign": ""
  },
  {
   "From": "2081-7-30",
   "To": "2081-7-30",
   "Event": "  संयुक्त वैठक ",
-  "Color": " blue "
+  "Color": " blue ",
+  "Sign": ""
 },
  {
    "From": "2081-8-7",
    "To": "2081-8-7",
    "Event": "हिज्जे प्रतियोगिता १-५ ",
-   "Color": "blue "
+   "Color": "blue ",
+   "Sign": ""
  },
  {
    "From": "2081-8-14",
    "To": "2081-8-14",
    "Event": "कथा लेखन प्रतियोगिता (९-१२)",
-   "Color": "blue "
+   "Color": "blue ",
+   "Sign": ""
  },
  {
    "From": "2081-8-21",
    "To": "2081-8-21",
-   "Event": "शैक्षिक सामग्री निर्माण तथा ",
-   "Color": "blue "
+   "Event": "शैक्षिक सामग्री निर्माण तथा प्रदर्शनी ",
+   "Color": "blue ",
+   "Sign": ""
  },
  {
   "From": "2081-8-21",
   "To": "2081-8-21",
-  "Event": "  प्रदर्शनी (१-८) (पालिका स्तरीय )",
-  "Color": "blue "
+  "Event": "(१-८) (पालिका स्तरीय )",
+  "Color": "blue ",
+  "Sign": ""
 },
  {
    "From": "2081-8-23",
    "To": "2081-8-30",
    "Event": "राष्ट्रपति रनिंग शिल्ड",
-   "Color": "blue "
+   "Color": "blue ",
+   "Sign": ""
  },
  {
   "From": "2081-8-23",
   "To": "2081-8-30",
   "Event": "  खेल सप्ताह ",
-  "Color": "blue "
+  "Color": "blue ",
+  "Sign": ""
 },
  {
    "From": "2081-8-30",
    "To": "2081-8-30",
    "Event": "उधौली पर्व ",
-   "Color": "red "
+   "Color": "red ",
+   "Sign": ""
  },
  {
    "From": "2081-9-5",
    "To": "2081-9-5",
    "Event": "म्युजिकल चियर (सबै तह)",
-   "Color": "blue "
+   "Color": "blue ",
+   "Sign": ""
  },
  {
    "From": "2081-9-10",
    "To": "2081-9-10",
    "Event": "क्रिश्मस डे ",
-   "Color": "red "
+   "Color": "red ",
+   "Sign": ""
  },
  {
    "From": "2081-9-11",
    "To": "2081-9-19",
    "Event": "दोश्रो त्रैमासिक परीक्षा ",
-   "Color": "green "
+   "Color": "green ",
+   "Sign": ""
  },
  {
    "From": "2081-9-15",
    "To": "2081-9-15",
    "Event": "तमु ल्होसार ",
-   "Color": "red "
+   "Color": "red ",
+   "Sign": ""
  },
  {
    "From": "2081-9-26",
    "To": "2081-9-26",
    "Event": "वाद विवाद प्रतियोगिता ",
-   "Color": "blue "
+   "Color": "blue ",
+   "Sign": ""
  },
  {
    "From": "2081-9-29",
    "To": "2081-9-29",
-   "Event": "दोश्रो त्रैमासिक परीक्षाको ",
-   "Color": "blue "
+   "Event": "दोश्रो त्रैमासिक परीक्षा को",
+   "Color": "blue ",
+   "Sign": ""
  },
  {
   "From": "2081-9-29",
   "To": "2081-9-29",
-  "Event": "  नतिजा प्रकाशन",
-  "Color": "blue "
+  "Event": "  नतिजा प्रकाशन एवं ",
+  "Color": "blue ",
+  "Sign": ""
 },
 {
   "From": "2081-9-29",
   "To": "2081-9-29",
   "Event": "   अभिभावक भेला ",
-  "Color": "blue "
+  "Color": "blue ",
+  "Sign": ""
 },
  {
    "From": "2081-10-1",
    "To": "2081-10-1",
    "Event": "माघे संक्रान्ति ",
-   "Color": "red "
+   "Color": "red ",
+   "Sign": ""
  },
  {
    "From": "2081-10-4",
    "To": "2081-10-4",
    "Event": "Spelling contest(1-5)",
-   "Color": "blue"
+   "Color": "blue",
+   "Sign": ""
  },
  {
    "From": "2081-10-11",
    "To": "2081-10-11",
    "Event": "हिसाब दौड (६-८) puzzle",
-   "Color": "blue"
+   "Color": "blue",
+   "Sign": ""
  },
  {
   "From": "2081-10-11",
   "To": "2081-10-11",
   "Event": "  (English+Nepali) (9-12)",
-  "Color": "blue"
+  "Color": "blue",
+  "Sign": ""
 },
  {
    "From": "2081-10-16",
    "To": "2081-10-16",
    "Event": "शहीद दिवस ",
-   "Color": "red "
+   "Color": "red ",
+   "Sign": ""
  },
  {
    "From": "2081-10-17",
    "To": "2081-10-17",
    "Event": "सोनाम ल्होसार ",
-   "Color": "red "
+   "Color": "red ",
+   "Sign": ""
  },
  {
    "From": "2081-10-18",
    "To": "2081-10-18",
    "Event": "स्थानीय विदा ",
-   "Color": "red "
+   "Color": "purple",
+   "Sign": ""
  },
  {
    "From": "2081-10-30",
    "To": "2081-10-30",
    "Event": "स्टाफ मिटिंग ",
-   "Color": "blue "
+   "Color": "blue ",
+   "Sign": ""
  },
  {
    "From": "2081-11-2",
    "To": "2081-11-2",
    "Event": "लोक गित तथा नृत्य (सबै)",
-   "Color": "blue "
+   "Color": "blue ",
+   "Sign": ""
  },
  {
    "From": "2081-11-4",
    "To": "2081-11-4",
    "Event": "गण्डकी प्रदेश स्थापना दिवस ",
-   "Color": "red "
+   "Color": "red ",
+   "Sign": ""
  },
  {
    "From": "2081-11-7",
    "To": "2081-11-7",
    "Event": "प्रजातन्त्र दिवस ",
-   "Color": "red "
+   "Color": "red ",
+   "Sign": ""
  },
  {
    "From": "2081-11-9",
    "To": "2081-11-9",
    "Event": "Hand writting competition",
-   "Color": "blue "
+   "Color": "blue ",
+   "Sign": ""
  },
  {
    "From": "2081-11-14",
    "To": "2081-11-14",
    "Event": "महाशिवरात्री ",
-   "Color": "red "
+   "Color": "red ",
+   "Sign": ""
  },
  {
    "From": "2081-11-15",
    "To": "2081-11-15",
    "Event": "स्थानीय विदा ",
-   "Color": "red "
+   "Color": "purple ",
+   "Sign": ""
  },
  {
    "From": "2081-11-16",
    "To": "2081-11-16",
    "Event": "ग्याल्पो ल्होसार ",
-   "Color": "red "
+   "Color": "red ",
+   "Sign": ""
  },
  {
    "From": "2081-11-23",
    "To": "2081-11-23",
    "Event": "Multiword formation",
-   "Color": "blue"
+   "Color": "blue",
+   "Sign": ""
  },
  {
   "From": "2081-11-23",
   "To": "2081-11-23",
   "Event": "  (6-12)",
-  "Color": "blue"
+  "Color": "blue",
+  "Sign": ""
 },
  {
    "From": "2081-11-29",
    "To": "2081-11-29",
    "Event": "होलि ",
-   "Color": "red "
+   "Color": "red ",
+   "Sign": ""
  },
  {
    "From": "2081-12-7",
    "To": "2081-12-14",
    "Event": "वार्षिक परीक्षा ",
-   "Color": "green "
+   "Color": "green ",
+   "Sign": ""
  },
  {
    "From": "2081-12-17",
    "To": "2081-12-18",
    "Event": "सिकाई उपलब्धी मापन परीक्षा ",
-   "Color": "green "
+   "Color": "green ",
+   "Sign": ""
  },
  {
    "From": "2081-12-27",
    "To": "2081-12-27",
    "Event": "वार्षिक परीक्षाको नतिजा प्रकाशन ",
-   "Color": "blue "
+   "Color": "blue ",
+   "Sign": ""
  },
  {
    "From": "2081-12-29",
    "To": "2081-12-29",
    "Event": "शै.स. २०८१ को वार्षिक समीक्षा ",
-   "Color": "blue "
+   "Color": "blue ",
+   "Sign": ""
  },
  {
    "From": "2081-12-31",
    "To": "2081-12-31",
    "Event": "शैक्षिक सत्र समाप्तीको घोषणा ",
-   "Color": "blue "
- }
+   "Color": "blue ",
+   "Sign": ""
+ },
+ {
+   "From": "2081-4-31",
+   "To": "2081-4-31",
+   "Event": " ३१ सम्म SIP निर्माण  गरिसक्ने ",
+   "Color": "blue",
+   "Sign": ""
+ },
+ {
+   "From": "2081-5-31",
+   "To": "2081-5-31",
+   "Event": "३१ सम्म सामाजिक परीक्षण ",
+   "Color": "black",
+   "Sign": ""
+ },
+ {
+  "From": "2081-5-31",
+  "To": "2081-5-31",
+  "Event": " गरिसक्ने ",
+  "Color": "blue",
+  "Sign": ""
+}
 ]
