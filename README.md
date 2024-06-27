@@ -2,21 +2,44 @@
 A UI for Nepali wheel calender, built for annual academic calender on a school. Utilized canvas of react to draw dates.
 
 To run the project:
-1. Clone this repository
-2. Run the backend section
+
+## 1. Clone this repository
+```bash
+git clone  https://github.com/SubasAd/Wheelcalender.git
+```
+
+## 2. Run the backend (NodeJS)
 ```bash
 cd backend
-npm install 
-npm start 
 ```
-3. Run the frontend
+
+```bash
+npm install 
+```
+```bash
+npm start 
+
+```
+## 3. Run the frontend (ReactJS)
+
 ```bash
 cd frontend
+```
+
+
+```bash
 npm install
+```
+
+```bash
 npm start
 ```
+
 To keep your own events:
-1. Edit the backend/ics_folder/dat.json file as per format
+##. Edit the backend/ics_folder/dat.json file as per format. 
+
+## Sample Outputs
+
 
 
 
