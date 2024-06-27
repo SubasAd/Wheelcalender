@@ -42,4 +42,5 @@ To keep your own events:
 
 
 
-
+![v1](https://github.com/SubasAd/Wheelcalender/blob/main/design_output_sample/outputs/ver_01.png)
+![v2](https://github.com/SubasAd/Wheelcalender/blob/main/design_output_sample/outputs/final_design_.png)
