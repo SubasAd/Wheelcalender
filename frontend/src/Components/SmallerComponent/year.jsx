@@ -18,7 +18,7 @@ const TrapezoidWithArcs = ({ canvasRef, }) => {
 
   useEffect(() => {
 	
-  fetch('http://localhost:5000/get_color')
+  fetch('http://localhost:8090/get_color')
   .then((response) => {
     if (!response.ok) {
       throw new Error('Network response was not ok');
@@ -104,7 +104,7 @@ const TrapezoidWithArcs = ({ canvasRef, }) => {
 				angle+=angle_increment
 			})
 			
-			writeYear(centerX,centerY,ctx,"२०८१")
+			writeYear(centerX,centerY,ctx,"२०८३")
 			// Draw lines from r2 to r8
 			const angleIncrement = 360 / 12; // 12 lines at equal space
 			const dayAngleIncrement = angleIncrement / 7; // 7 days in a week
@@ -189,7 +189,7 @@ const ParentComponent = () => {
       	&emsp;&emsp;	महाशिला -५ , लुंखु, पर्वत   <br/>
       	&emsp;&emsp;	<u style={{
 			color:"red"
-		}}>वार्षिक कार्यपात्रो -२०८१</u><br/>
+		}}>वार्षिक कार्यपात्रो -२०८३</u><br/>
       </div>
 	  <div style={{ 
         fontSize: `100pt`,

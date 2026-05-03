@@ -2,10 +2,10 @@ export default async function fetchICSData(for_dates=false) {
 	try {
 		var response = null;
 		if (for_dates){
-			response = await fetch('http://localhost:5000/get_dates');
+			response = await fetch('http://localhost:8090/get_dates');
 		}else{
 
-			response = await fetch('http://localhost:5000/get_events');
+			response = await fetch('http://localhost:8090/get_color');
 		}
 
 	  // Check for successful response
