@@ -17,7 +17,7 @@ const devanagariNumbers = [
     "३१", "३२", "३३", "३४", "३५"
 ];
 
-const date_in_2083 = [31, 32, 31, 32, 31, 30, 30, 30, 29, 30, 29, 31];
+const date_in_2083 = [31, 31, 32, 31, 31, 31, 30, 29, 30, 29, 30, 30];
  
 
 function mergeArrays(arr1, arr2) {
