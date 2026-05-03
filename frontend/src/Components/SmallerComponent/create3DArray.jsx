@@ -65,7 +65,7 @@ function calculateMonth(i,week_num) {
     return week_num
 }
 
-let day_counter = 6;
+let day_counter = 2;
 for (let i = 0; i < date_in_2083.length; i++) {
     bikramSambatDates[i] = [];
 	
