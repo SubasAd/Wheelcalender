@@ -216,7 +216,8 @@ const ParentComponent = () => {
 		
 		// Adding some space between the heading and the canvas
       }}>
-<p> प्रधानाध्यापक: गोपाल प्रसाद शर्मा </p><br/>
+<p>
+प्रधानाध्यापक: बालकृष्ण उपाध्याय </p><br/>
 
 </div>
 <div style={{ 
@@ -234,9 +235,8 @@ const ParentComponent = () => {
 
 <p>
 <pre> 
-संयोजक: विष्णुमाया  शर्मा <br/>
-सदस्य : लेखनाथ अधिकारी <br/>       लोकमणी सापकोटा<br/>       निता कुमारी उचै <br/>
-सहयोग : subasadhikari0025@gmail.com
+संयोजक: लेखनाथ अधिकारी <br/>  
+सहयोग : subasadhikari.com.np
 </pre>
 </p>
 </div>
