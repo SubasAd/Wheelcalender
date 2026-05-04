@@ -1,6 +1,6 @@
 import { config } from './create3DArray';
 
-export function writeYear(centerX, centerY, ctx, year = "२०८१ २०८१") {
+export function writeYear(centerX, centerY, ctx, year = "२०८३ २०८३") {
 
 	const fontSize = 80;
 	ctx.font = `${fontSize}px Arial`;

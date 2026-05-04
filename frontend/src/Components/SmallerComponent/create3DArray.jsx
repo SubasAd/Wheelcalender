@@ -17,7 +17,7 @@ const devanagariNumbers = [
     "३१", "३२", "३३", "३४", "३५"
 ];
 
-const date_in_2081 = [31, 32, 31, 32, 31, 30, 30, 30, 29, 30, 29, 31];
+const date_in_2083 = [31, 31, 32, 31, 31, 31, 30, 29, 30, 29, 30, 30];
  
 
 function mergeArrays(arr1, arr2) {
@@ -48,7 +48,7 @@ function calculateMonth(i,week_num) {
             if (k < week_num) {
                 bikramSambatDates[i][j][k] = "";
             }
-            else if (count <= date_in_2081[i]) {
+            else if (count <= date_in_2083[i]) {
                 bikramSambatDates[i][j][k] = devanagariNumbers[count-1];
                 count++;
                 week_num = (week_num + 1) % 7;
@@ -65,8 +65,8 @@ function calculateMonth(i,week_num) {
     return week_num
 }
 
-let day_counter = 6;
-for (let i = 0; i < date_in_2081.length; i++) {
+let day_counter = 2;
+for (let i = 0; i < date_in_2083.length; i++) {
     bikramSambatDates[i] = [];
 	
     day_counter = calculateMonth(i,day_counter);
@@ -119,7 +119,7 @@ export function getColor(month,date) {
    
     let colors = JSON.parse(localStorage.getItem("events"));
     
-    const targetDate = `2081-${month+1}-${date+1}`;
+    const targetDate = `2083-${month+1}-${date+1}`;
     let  color = "black"
     colors.forEach(element => {
 

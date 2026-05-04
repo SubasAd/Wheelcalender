@@ -1,5 +1,4 @@
 
-
 import fs from 'fs';
 import path from 'path';
 import express from 'express';
@@ -8,7 +7,7 @@ import cors from 'cors';
 
 const app = express();
 app.use(cors());
-const PORT = 5000;
+const PORT = 8090;
 
 const convertEvents = async (for_date) => {
   try {
@@ -37,7 +36,6 @@ const convertEvents = async (for_date) => {
 
 app.get('/get_events',async (req, res) => {
   const jsonData = await convertEvents();
-  jsonData = jsonData['0']['VEVENT']
   if (jsonData) {
     res.json(jsonData);
   } else {
@@ -47,7 +45,6 @@ app.get('/get_events',async (req, res) => {
 
 app.get('/get_dates',async (req, res) => {
 	let jsonData = await convertEvents(true);
-  jsonData = jsonData['0']
 	if (jsonData) {
 	  res.json(jsonData);
 	} else {
