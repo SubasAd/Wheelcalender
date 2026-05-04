@@ -26,7 +26,8 @@ ctx.textBaseline = "middle";
 
 		 // Draw the icon
 		 ctx.font = '25px Arial, Helvetica, Verdana';
-		 ctx.fillText("🖎", ctx.measureText(day_text).width / 2, 0);
+		 ctx.fillStyle = "green";
+		 ctx.fillText("✍🏻", ctx.measureText(day_text).width / 2, 0);
 	}
 	else{
 	ctx.font = `50px Arial, Helvetica, Verdana`;
